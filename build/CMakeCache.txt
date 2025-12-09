@@ -246,13 +246,13 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-mpr_BINARY_DIR:STATIC=C:/Users/User/Documents/git/MPR_Project/build/client
+mpr_BINARY_DIR:STATIC=C:/Users/User/Documents/git/MPR_Project/build
 
 //Value Computed by CMake
-mpr_IS_TOP_LEVEL:STATIC=OFF
+mpr_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-mpr_SOURCE_DIR:STATIC=C:/Users/User/Documents/git/MPR_Project/client
+mpr_SOURCE_DIR:STATIC=C:/Users/User/Documents/git/MPR_Project
 
 
 ########################

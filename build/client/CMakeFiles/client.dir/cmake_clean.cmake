@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "../bin/client.pdb"
   "CMakeFiles/client.dir/__/src/matrix.cpp.obj"
   "CMakeFiles/client.dir/__/src/matrix.cpp.obj.d"
+  "CMakeFiles/client.dir/__/src/socket.cpp.obj"
+  "CMakeFiles/client.dir/__/src/socket.cpp.obj.d"
   "CMakeFiles/client.dir/client.cpp.obj"
   "CMakeFiles/client.dir/client.cpp.obj.d"
   "libclient.dll.a"

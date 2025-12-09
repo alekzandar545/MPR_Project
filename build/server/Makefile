@@ -153,6 +153,30 @@ __/src/matrix.cpp.s:
 	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f server\CMakeFiles\server.dir\build.make server/CMakeFiles/server.dir/__/src/matrix.cpp.s
 .PHONY : __/src/matrix.cpp.s
 
+__/src/socket.obj: __/src/socket.cpp.obj
+.PHONY : __/src/socket.obj
+
+# target to build an object file
+__/src/socket.cpp.obj:
+	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f server\CMakeFiles\server.dir\build.make server/CMakeFiles/server.dir/__/src/socket.cpp.obj
+.PHONY : __/src/socket.cpp.obj
+
+__/src/socket.i: __/src/socket.cpp.i
+.PHONY : __/src/socket.i
+
+# target to preprocess a source file
+__/src/socket.cpp.i:
+	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f server\CMakeFiles\server.dir\build.make server/CMakeFiles/server.dir/__/src/socket.cpp.i
+.PHONY : __/src/socket.cpp.i
+
+__/src/socket.s: __/src/socket.cpp.s
+.PHONY : __/src/socket.s
+
+# target to generate assembly for a file
+__/src/socket.cpp.s:
+	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f server\CMakeFiles\server.dir\build.make server/CMakeFiles/server.dir/__/src/socket.cpp.s
+.PHONY : __/src/socket.cpp.s
+
 server.obj: server.cpp.obj
 .PHONY : server.obj
 
@@ -189,6 +213,9 @@ help:
 	@echo ... __/src/matrix.obj
 	@echo ... __/src/matrix.i
 	@echo ... __/src/matrix.s
+	@echo ... __/src/socket.obj
+	@echo ... __/src/socket.i
+	@echo ... __/src/socket.s
 	@echo ... server.obj
 	@echo ... server.i
 	@echo ... server.s
