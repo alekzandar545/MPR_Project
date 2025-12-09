@@ -1,0 +1,8 @@
+C:/Users/User/Documents/git/MPR_Project/build/CMakeFiles/edit_cache.dir
+C:/Users/User/Documents/git/MPR_Project/build/CMakeFiles/rebuild_cache.dir
+C:/Users/User/Documents/git/MPR_Project/build/server/CMakeFiles/server.dir
+C:/Users/User/Documents/git/MPR_Project/build/server/CMakeFiles/edit_cache.dir
+C:/Users/User/Documents/git/MPR_Project/build/server/CMakeFiles/rebuild_cache.dir
+C:/Users/User/Documents/git/MPR_Project/build/client/CMakeFiles/client.dir
+C:/Users/User/Documents/git/MPR_Project/build/client/CMakeFiles/edit_cache.dir
+C:/Users/User/Documents/git/MPR_Project/build/client/CMakeFiles/rebuild_cache.dir

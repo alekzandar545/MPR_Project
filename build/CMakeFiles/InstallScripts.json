@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/User/Documents/git/MPR_Project/build/cmake_install.cmake",
+		"C:/Users/User/Documents/git/MPR_Project/build/server/cmake_install.cmake",
+		"C:/Users/User/Documents/git/MPR_Project/build/client/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
