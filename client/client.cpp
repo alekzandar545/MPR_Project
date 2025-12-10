@@ -22,9 +22,13 @@ int main() {
     std::cout << "Connected!\n";
 
     // TEST: send parameters
-    int rows = 10;
-    int cols = 10;
-    int threads = 4;
+    int rows, cols, threads;
+    std::cout << "Enter rows: ";
+    std::cin >> rows;
+    std::cout << "Enter cols: ";
+    std::cin >> cols;
+    std::cout << "Enter threads: ";
+    std::cin >> threads;
 
     client.sendInt(rows);
     client.sendInt(cols);
@@ -40,7 +44,7 @@ int main() {
     client.receiveRaw(response.data(), len);
 
     std::cout << "Server says: " << response << "\n";
-    
+
     double tSingle, tMulti;
     client.receiveDouble(tSingle);
     client.receiveDouble(tMulti);

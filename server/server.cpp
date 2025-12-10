@@ -32,15 +32,13 @@ void handleClient(Socket& client) {
     end = std::chrono::high_resolution_clock::now();
     double timeMulti = std::chrono::duration<double,std::milli>(end-start).count();
 
-    // Send results back to client
-
         
     //response
     std::string msg = "Parameters received OK!";
     int len = msg.size();
     client.sendInt(len);
     client.sendRaw(msg.c_str(), len);
-    
+
     client.sendDouble(timeSingle);
     client.sendDouble(timeMulti);
 
