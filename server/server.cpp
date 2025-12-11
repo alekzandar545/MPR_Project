@@ -8,28 +8,32 @@ Server* Server::instance = nullptr;
 
 bool sendResponse(Socket& client, Matrix& m, double timeSingle, double timeMulti) {
     try {
-        // Send acknowledgment
-        std::string msg = "Parameters received OK!";
-        client.sendInt(msg.size());
-        client.sendAll(msg.c_str(), msg.size());
+        const std::string msg = "Parameters received OK!";
+        const std::string preview = m.previewMatrix();
 
-        // Send timing info
-        client.sendDouble(timeSingle);
-        client.sendDouble(timeMulti);
+        // Create an array of send operations as lambdas
+        const std::function<bool()> sendOps[] = {
+            //sending msg for parameters
+            [&]() { return client.sendInt(msg.size()); },
+            [&]() { return client.sendAll(msg.c_str(), msg.size()); },
+            //sending times
+            [&]() { return client.sendDouble(timeSingle); },
+            [&]() { return client.sendDouble(timeMulti); },
+            //sending preview
+            [&]() { return client.sendInt(preview.size()); },
+            [&]() { return client.sendAll(preview.c_str(), preview.size()); }
+        };
 
-        // Send matrix preview
-        std::string preview = m.previewMatrix();
-        client.sendInt(preview.size());
-        client.sendAll(preview.c_str(), preview.size());
+        // Execute all sends and check success
+        for (const auto& op : sendOps) 
+            if (!op()) 
+                throw std::runtime_error("Failed sending data to client");
 
         Logger::getInstance().log("Client response sent successfully", LogLevel::INFO);
         return true;
     }
     catch (const std::exception& e) {
-        Logger::getInstance().log(
-            std::string("Error sending response to client: ") + e.what(),
-            LogLevel::ERR
-        );
+        Logger::getInstance().log("Error sending response to client: " + std::string(e.what()), LogLevel::ERR);
         return false;
     }
     catch (...) {
