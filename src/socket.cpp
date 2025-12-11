@@ -93,6 +93,10 @@ bool Socket::sendInt(int value) {
 
 bool Socket::receiveInt(int& value) {
     return receiveRaw(reinterpret_cast<char*>(&value), sizeof(int));
+    // if (bytesRead != sizeof(value)) { //doesnt accept anything longr
+    //     return false;
+    // }
+    // return true;
 }
 
 bool Socket::sendDouble(double value) {
@@ -101,4 +105,8 @@ bool Socket::sendDouble(double value) {
 
 bool Socket::receiveDouble(double& value) {
     return receiveRaw(reinterpret_cast<char*>(&value), sizeof(double));
+    //     if (bytesRead != sizeof(value)) { 
+    //     return false;
+    // }
+    // return true;
 }

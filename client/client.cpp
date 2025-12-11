@@ -1,6 +1,28 @@
 #include <iostream>
 #include "socket.hpp"
 
+//assuring that input for rows/cols/threads is correct and server doesnt crash
+int getIntFromUser(const std::string& prompt) {
+    int value;
+    while (true) {
+        std::cout << prompt;
+        std::string input;
+        std::getline(std::cin, input);
+
+        try {
+            size_t pos;
+            value = std::stoi(input, &pos);
+            if (pos != input.size()) {
+                throw std::invalid_argument("Extra characters after number");
+            }
+            break; // valid integer
+        } catch (std::exception&) {
+            std::cout << "Invalid input. Please enter a valid integer.\n";
+        }
+    }
+    return value;
+}
+
 int main() {
     WSAData wsa;
     WSAStartup(MAKEWORD(2, 2), &wsa);
@@ -22,13 +44,9 @@ int main() {
     std::cout << "Connected!\n";
 
     // TEST: send parameters
-    int rows, cols, threads;
-    std::cout << "Enter rows: ";
-    std::cin >> rows;
-    std::cout << "Enter cols: ";
-    std::cin >> cols;
-    std::cout << "Enter threads: ";
-    std::cin >> threads;
+    int rows   = getIntFromUser("Enter rows: ");
+    int cols   = getIntFromUser("Enter cols: ");
+    int threads = getIntFromUser("Enter threads: ");
 
     client.sendInt(rows);
     client.sendInt(cols);

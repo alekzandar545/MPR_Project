@@ -5,6 +5,41 @@
 #include "../include/thread_pool.hpp"
 #include "../include/logger.hpp"   
 
+bool sendResponse(Socket& client, Matrix& m, double timeSingle, double timeMulti){
+    try{
+        //sending response
+        std::string msg = "Parameters received OK!";
+        int msgLen = msg.size();
+        client.sendInt(msgLen);
+        client.sendAll(msg.c_str(), msgLen);
+
+        //sending times
+        client.sendDouble(timeSingle);
+        client.sendDouble(timeMulti);
+
+        //sending preview
+        std::string preview = m.previewMatrix();
+        int previewLen = preview.size();
+
+        client.sendInt(previewLen);
+        client.sendAll(preview.c_str(), preview.size());
+
+        Logger::getInstance().log("Client disconnected", LogLevel::INFO);
+        return true;
+    }
+    catch (const std::exception& e) {
+        Logger::getInstance().log(
+            std::string("Error sending response to client: ") + e.what(),
+            LogLevel::ERR
+        );
+        return false;
+    }
+    catch (...) {
+        Logger::getInstance().log("Unknown error occurred during response", LogLevel::ERR);
+        return false;
+    }
+}
+
 void handleClient(Socket client) {
     Logger::getInstance().log(
         "Handling client", LogLevel::INFO
@@ -24,6 +59,39 @@ void handleClient(Socket client) {
         return;
     }
 
+    //sanity check
+    if (rows <= 0 || cols <= 0 || threads <= 0) {
+        Logger::getInstance().log(
+            "Received invalid parameters: rows=" + std::to_string(rows) +
+            " cols=" + std::to_string(cols) +
+            " threads=" + std::to_string(threads),
+            LogLevel::ERR
+        );
+        std::string errMsg = "Invalid parameters!";
+        try {
+            client.sendInt(errMsg.size());
+            client.sendAll(errMsg.c_str(), errMsg.size());
+        } catch (...) {
+            Logger::getInstance().log("Failed to send error message to client", LogLevel::ERR);
+        }
+        return;
+    }
+    //limiting the size a bit
+    const size_t MAX_ELEMENTS = 100'000'000; // ~400MB for int
+    if (static_cast<size_t>(rows) * cols > MAX_ELEMENTS) {
+        Logger::getInstance().log("Matrix too large, rejecting request", LogLevel::ERR);
+
+        std::string errMsg = "Matrix too large!";
+        try {
+            client.sendInt(errMsg.size());
+            client.sendAll(errMsg.c_str(), errMsg.size());
+        } catch (...) {
+            Logger::getInstance().log("Failed to send error message to client", LogLevel::ERR);
+        }
+        return;
+    }
+
+    //everything is okay
     Logger::getInstance().log(
         "Received params: rows=" + std::to_string(rows) +
         " cols=" + std::to_string(cols) +
@@ -39,29 +107,14 @@ void handleClient(Socket client) {
     auto end = std::chrono::high_resolution_clock::now();
     double timeSingle = std::chrono::duration<double,std::milli>(end - start).count();
 
-    start = std::chrono::high_resolution_clock::now();
-    m.fillMultiThreaded(threads);
-    end = std::chrono::high_resolution_clock::now();
-    double timeMulti = std::chrono::duration<double,std::milli>(end - start).count();
-
-    //sending response
-    std::string msg = "Parameters received OK!";
-    int len = msg.size();
-    client.sendInt(len);
-    client.sendRaw(msg.c_str(), len);
-
-    //sending times
-    client.sendDouble(timeSingle);
-    client.sendDouble(timeMulti);
-
-    //sending preview
-    std::string preview = m.previewMatrix();
-    len = preview.size();
-
-    client.sendInt(len);
-    client.sendAll(preview.c_str(), preview.size());
-
-    Logger::getInstance().log("Client disconnected", LogLevel::INFO);
+    double timeMulti = timeSingle; //in case thread = 1
+    if (threads > 1) { 
+        start = std::chrono::high_resolution_clock::now();
+        m.fillMultiThreaded(threads);
+        end = std::chrono::high_resolution_clock::now();
+        timeMulti = std::chrono::duration<double,std::milli>(end - start).count();
+    }
+    sendResponse(client,m,timeSingle,timeMulti);
 }
 
 
