@@ -10,6 +10,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/server.dir/__/src/socket.cpp.obj.d"
   "CMakeFiles/server.dir/__/src/thread_pool.cpp.obj"
   "CMakeFiles/server.dir/__/src/thread_pool.cpp.obj.d"
+  "CMakeFiles/server.dir/main.cpp.obj"
+  "CMakeFiles/server.dir/main.cpp.obj.d"
   "CMakeFiles/server.dir/server.cpp.obj"
   "CMakeFiles/server.dir/server.cpp.obj.d"
   "libserver.dll.a"

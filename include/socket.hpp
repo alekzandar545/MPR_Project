@@ -10,6 +10,9 @@ public:
     // Constructors
     Socket();
     explicit Socket(SOCKET fd);
+  
+    // Getter
+    SOCKET getFd() const;
 
     // Move-only (no copy)
     Socket(Socket&& other) noexcept;

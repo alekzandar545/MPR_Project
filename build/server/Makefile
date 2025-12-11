@@ -225,6 +225,30 @@ __/src/thread_pool.cpp.s:
 	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f server\CMakeFiles\server.dir\build.make server/CMakeFiles/server.dir/__/src/thread_pool.cpp.s
 .PHONY : __/src/thread_pool.cpp.s
 
+main.obj: main.cpp.obj
+.PHONY : main.obj
+
+# target to build an object file
+main.cpp.obj:
+	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f server\CMakeFiles\server.dir\build.make server/CMakeFiles/server.dir/main.cpp.obj
+.PHONY : main.cpp.obj
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f server\CMakeFiles\server.dir\build.make server/CMakeFiles/server.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f server\CMakeFiles\server.dir\build.make server/CMakeFiles/server.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 server.obj: server.cpp.obj
 .PHONY : server.obj
 
@@ -270,6 +294,9 @@ help:
 	@echo ... __/src/thread_pool.obj
 	@echo ... __/src/thread_pool.i
 	@echo ... __/src/thread_pool.s
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
 	@echo ... server.obj
 	@echo ... server.i
 	@echo ... server.s

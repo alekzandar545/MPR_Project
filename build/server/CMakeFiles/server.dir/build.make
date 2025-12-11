@@ -71,11 +71,26 @@ include server/CMakeFiles/server.dir/flags.make
 server/CMakeFiles/server.dir/codegen:
 .PHONY : server/CMakeFiles/server.dir/codegen
 
+server/CMakeFiles/server.dir/main.cpp.obj: server/CMakeFiles/server.dir/flags.make
+server/CMakeFiles/server.dir/main.cpp.obj: server/CMakeFiles/server.dir/includes_CXX.rsp
+server/CMakeFiles/server.dir/main.cpp.obj: C:/Users/User/Documents/git/MPR_Project/server/main.cpp
+server/CMakeFiles/server.dir/main.cpp.obj: server/CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object server/CMakeFiles/server.dir/main.cpp.obj"
+	cd /d C:\Users\User\Documents\git\MPR_Project\build\server && C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT server/CMakeFiles/server.dir/main.cpp.obj -MF CMakeFiles\server.dir\main.cpp.obj.d -o CMakeFiles\server.dir\main.cpp.obj -c C:\Users\User\Documents\git\MPR_Project\server\main.cpp
+
+server/CMakeFiles/server.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/server.dir/main.cpp.i"
+	cd /d C:\Users\User\Documents\git\MPR_Project\build\server && C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\git\MPR_Project\server\main.cpp > CMakeFiles\server.dir\main.cpp.i
+
+server/CMakeFiles/server.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/server.dir/main.cpp.s"
+	cd /d C:\Users\User\Documents\git\MPR_Project\build\server && C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\git\MPR_Project\server\main.cpp -o CMakeFiles\server.dir\main.cpp.s
+
 server/CMakeFiles/server.dir/server.cpp.obj: server/CMakeFiles/server.dir/flags.make
 server/CMakeFiles/server.dir/server.cpp.obj: server/CMakeFiles/server.dir/includes_CXX.rsp
 server/CMakeFiles/server.dir/server.cpp.obj: C:/Users/User/Documents/git/MPR_Project/server/server.cpp
 server/CMakeFiles/server.dir/server.cpp.obj: server/CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object server/CMakeFiles/server.dir/server.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object server/CMakeFiles/server.dir/server.cpp.obj"
 	cd /d C:\Users\User\Documents\git\MPR_Project\build\server && C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT server/CMakeFiles/server.dir/server.cpp.obj -MF CMakeFiles\server.dir\server.cpp.obj.d -o CMakeFiles\server.dir\server.cpp.obj -c C:\Users\User\Documents\git\MPR_Project\server\server.cpp
 
 server/CMakeFiles/server.dir/server.cpp.i: cmake_force
@@ -90,7 +105,7 @@ server/CMakeFiles/server.dir/__/src/matrix.cpp.obj: server/CMakeFiles/server.dir
 server/CMakeFiles/server.dir/__/src/matrix.cpp.obj: server/CMakeFiles/server.dir/includes_CXX.rsp
 server/CMakeFiles/server.dir/__/src/matrix.cpp.obj: C:/Users/User/Documents/git/MPR_Project/src/matrix.cpp
 server/CMakeFiles/server.dir/__/src/matrix.cpp.obj: server/CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object server/CMakeFiles/server.dir/__/src/matrix.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object server/CMakeFiles/server.dir/__/src/matrix.cpp.obj"
 	cd /d C:\Users\User\Documents\git\MPR_Project\build\server && C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT server/CMakeFiles/server.dir/__/src/matrix.cpp.obj -MF CMakeFiles\server.dir\__\src\matrix.cpp.obj.d -o CMakeFiles\server.dir\__\src\matrix.cpp.obj -c C:\Users\User\Documents\git\MPR_Project\src\matrix.cpp
 
 server/CMakeFiles/server.dir/__/src/matrix.cpp.i: cmake_force
@@ -105,7 +120,7 @@ server/CMakeFiles/server.dir/__/src/socket.cpp.obj: server/CMakeFiles/server.dir
 server/CMakeFiles/server.dir/__/src/socket.cpp.obj: server/CMakeFiles/server.dir/includes_CXX.rsp
 server/CMakeFiles/server.dir/__/src/socket.cpp.obj: C:/Users/User/Documents/git/MPR_Project/src/socket.cpp
 server/CMakeFiles/server.dir/__/src/socket.cpp.obj: server/CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object server/CMakeFiles/server.dir/__/src/socket.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object server/CMakeFiles/server.dir/__/src/socket.cpp.obj"
 	cd /d C:\Users\User\Documents\git\MPR_Project\build\server && C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT server/CMakeFiles/server.dir/__/src/socket.cpp.obj -MF CMakeFiles\server.dir\__\src\socket.cpp.obj.d -o CMakeFiles\server.dir\__\src\socket.cpp.obj -c C:\Users\User\Documents\git\MPR_Project\src\socket.cpp
 
 server/CMakeFiles/server.dir/__/src/socket.cpp.i: cmake_force
@@ -120,7 +135,7 @@ server/CMakeFiles/server.dir/__/src/thread_pool.cpp.obj: server/CMakeFiles/serve
 server/CMakeFiles/server.dir/__/src/thread_pool.cpp.obj: server/CMakeFiles/server.dir/includes_CXX.rsp
 server/CMakeFiles/server.dir/__/src/thread_pool.cpp.obj: C:/Users/User/Documents/git/MPR_Project/src/thread_pool.cpp
 server/CMakeFiles/server.dir/__/src/thread_pool.cpp.obj: server/CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object server/CMakeFiles/server.dir/__/src/thread_pool.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object server/CMakeFiles/server.dir/__/src/thread_pool.cpp.obj"
 	cd /d C:\Users\User\Documents\git\MPR_Project\build\server && C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT server/CMakeFiles/server.dir/__/src/thread_pool.cpp.obj -MF CMakeFiles\server.dir\__\src\thread_pool.cpp.obj.d -o CMakeFiles\server.dir\__\src\thread_pool.cpp.obj -c C:\Users\User\Documents\git\MPR_Project\src\thread_pool.cpp
 
 server/CMakeFiles/server.dir/__/src/thread_pool.cpp.i: cmake_force
@@ -135,7 +150,7 @@ server/CMakeFiles/server.dir/__/src/logger.cpp.obj: server/CMakeFiles/server.dir
 server/CMakeFiles/server.dir/__/src/logger.cpp.obj: server/CMakeFiles/server.dir/includes_CXX.rsp
 server/CMakeFiles/server.dir/__/src/logger.cpp.obj: C:/Users/User/Documents/git/MPR_Project/src/logger.cpp
 server/CMakeFiles/server.dir/__/src/logger.cpp.obj: server/CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object server/CMakeFiles/server.dir/__/src/logger.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object server/CMakeFiles/server.dir/__/src/logger.cpp.obj"
 	cd /d C:\Users\User\Documents\git\MPR_Project\build\server && C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT server/CMakeFiles/server.dir/__/src/logger.cpp.obj -MF CMakeFiles\server.dir\__\src\logger.cpp.obj.d -o CMakeFiles\server.dir\__\src\logger.cpp.obj -c C:\Users\User\Documents\git\MPR_Project\src\logger.cpp
 
 server/CMakeFiles/server.dir/__/src/logger.cpp.i: cmake_force
@@ -148,6 +163,7 @@ server/CMakeFiles/server.dir/__/src/logger.cpp.s: cmake_force
 
 # Object files for target server
 server_OBJECTS = \
+"CMakeFiles/server.dir/main.cpp.obj" \
 "CMakeFiles/server.dir/server.cpp.obj" \
 "CMakeFiles/server.dir/__/src/matrix.cpp.obj" \
 "CMakeFiles/server.dir/__/src/socket.cpp.obj" \
@@ -157,6 +173,7 @@ server_OBJECTS = \
 # External object files for target server
 server_EXTERNAL_OBJECTS =
 
+bin/server.exe: server/CMakeFiles/server.dir/main.cpp.obj
 bin/server.exe: server/CMakeFiles/server.dir/server.cpp.obj
 bin/server.exe: server/CMakeFiles/server.dir/__/src/matrix.cpp.obj
 bin/server.exe: server/CMakeFiles/server.dir/__/src/socket.cpp.obj
@@ -166,7 +183,7 @@ bin/server.exe: server/CMakeFiles/server.dir/build.make
 bin/server.exe: server/CMakeFiles/server.dir/linkLibs.rsp
 bin/server.exe: server/CMakeFiles/server.dir/objects1.rsp
 bin/server.exe: server/CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ..\bin\server.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ..\bin\server.exe"
 	cd /d C:\Users\User\Documents\git\MPR_Project\build\server && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\server.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

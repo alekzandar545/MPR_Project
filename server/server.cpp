@@ -1,56 +1,19 @@
-#include <thread>
-#include <chrono>
-#include "../include/socket.hpp"
+#include "server.hpp"
 #include "../include/matrix.hpp"
-#include "../include/thread_pool.hpp"
-#include "../include/logger.hpp"   
+#include <windows.h>
+#include <winsock2.h>
 
-bool sendResponse(Socket& client, Matrix& m, double timeSingle, double timeMulti){
-    try{
-        //sending response
-        std::string msg = "Parameters received OK!";
-        int msgLen = msg.size();
-        client.sendInt(msgLen);
-        client.sendAll(msg.c_str(), msgLen);
-
-        //sending times
-        client.sendDouble(timeSingle);
-        client.sendDouble(timeMulti);
-
-        //sending preview
-        std::string preview = m.previewMatrix();
-        int previewLen = preview.size();
-
-        client.sendInt(previewLen);
-        client.sendAll(preview.c_str(), preview.size());
-
-        Logger::getInstance().log("Client disconnected", LogLevel::INFO);
-        return true;
-    }
-    catch (const std::exception& e) {
-        Logger::getInstance().log(
-            std::string("Error sending response to client: ") + e.what(),
-            LogLevel::ERR
-        );
-        return false;
-    }
-    catch (...) {
-        Logger::getInstance().log("Unknown error occurred during response", LogLevel::ERR);
-        return false;
-    }
-}
+std::atomic<bool> Server::running = true;
+Server* Server::instance = nullptr;
 
 void handleClient(Socket client) {
-    Logger::getInstance().log(
-        "Handling client", LogLevel::INFO
-    );
+    Logger::getInstance().log("Handling client", LogLevel::INFO);
 
-    //receiving data from client
     int rows, cols, threads;
 
     if (!client.receiveInt(rows) ||
         !client.receiveInt(cols) ||
-        !client.receiveInt(threads)) 
+        !client.receiveInt(threads))
     {
         Logger::getInstance().log(
             "Failed to receive parameters from client",
@@ -59,47 +22,13 @@ void handleClient(Socket client) {
         return;
     }
 
-    //sanity check
     if (rows <= 0 || cols <= 0 || threads <= 0) {
-        Logger::getInstance().log(
-            "Received invalid parameters: rows=" + std::to_string(rows) +
-            " cols=" + std::to_string(cols) +
-            " threads=" + std::to_string(threads),
-            LogLevel::ERR
-        );
         std::string errMsg = "Invalid parameters!";
-        try {
-            client.sendInt(errMsg.size());
-            client.sendAll(errMsg.c_str(), errMsg.size());
-        } catch (...) {
-            Logger::getInstance().log("Failed to send error message to client", LogLevel::ERR);
-        }
-        return;
-    }
-    //limiting the size a bit
-    const size_t MAX_ELEMENTS = 100'000'000; // ~400MB for int
-    if (static_cast<size_t>(rows) * cols > MAX_ELEMENTS) {
-        Logger::getInstance().log("Matrix too large, rejecting request", LogLevel::ERR);
-
-        std::string errMsg = "Matrix too large!";
-        try {
-            client.sendInt(errMsg.size());
-            client.sendAll(errMsg.c_str(), errMsg.size());
-        } catch (...) {
-            Logger::getInstance().log("Failed to send error message to client", LogLevel::ERR);
-        }
+        client.sendInt(errMsg.size());
+        client.sendAll(errMsg.c_str(), errMsg.size());
         return;
     }
 
-    //everything is okay
-    Logger::getInstance().log(
-        "Received params: rows=" + std::to_string(rows) +
-        " cols=" + std::to_string(cols) +
-        " threads=" + std::to_string(threads),
-        LogLevel::DEBUG
-    );
-
-    //processing the data from the client
     Matrix m(rows, cols);
 
     auto start = std::chrono::high_resolution_clock::now();
@@ -107,49 +36,89 @@ void handleClient(Socket client) {
     auto end = std::chrono::high_resolution_clock::now();
     double timeSingle = std::chrono::duration<double,std::milli>(end - start).count();
 
-    double timeMulti = timeSingle; //in case thread = 1
-    if (threads > 1) { 
+    double timeMulti = timeSingle;
+    if (threads > 1) {
         start = std::chrono::high_resolution_clock::now();
         m.fillMultiThreaded(threads);
         end = std::chrono::high_resolution_clock::now();
         timeMulti = std::chrono::duration<double,std::milli>(end - start).count();
     }
-    sendResponse(client,m,timeSingle,timeMulti);
+
+    std::string msg = "Parameters received OK!";
+    client.sendInt(msg.size());
+    client.sendAll(msg.c_str(), msg.size());
+
+    client.sendDouble(timeSingle);
+    client.sendDouble(timeMulti);
+
+    std::string preview = m.previewMatrix();
+    client.sendInt(preview.size());
+    client.sendAll(preview.c_str(), preview.size());
 }
 
 
-int main() {
+BOOL WINAPI Server::consoleHandler(DWORD signal) {
+    if (signal == CTRL_C_EVENT) {
+        Logger::getInstance().log("CTRL+C received, shutting down server...", LogLevel::INFO);
+        running = false;
+
+        if (instance) {
+            closesocket(instance->serverSocket.getFd()); // unblock accept()
+        }
+        return TRUE;
+    }
+    return FALSE;
+}
+
+Server::Server(int port_, int threadCount)
+    : port(port_), pool(threadCount)
+{
+    instance = this;
+
+    SetConsoleCtrlHandler(consoleHandler, TRUE);
+
     WSAData wsa;
     WSAStartup(MAKEWORD(2, 2), &wsa);
 
-    Socket server = Socket::createTcp();
-    if (!server.isValid()) {
-        Logger::getInstance().log("Socket creation failed", LogLevel::ERR);
-        return 1;
-    }
+    serverSocket = Socket::createTcp();
 
-    if (!server.bindToPort(5555)) {
-        Logger::getInstance().log("Bind failed", LogLevel::ERR);
-        return 1;
-    }
+    if (!serverSocket.isValid())
+        throw std::runtime_error("Failed to create server socket");
 
-    server.listenOn();
+    if (!serverSocket.bindToPort(port))
+        throw std::runtime_error("Failed to bind server to port");
 
-    Logger::getInstance().log("Server waiting for client...", LogLevel::INFO);
+    serverSocket.listenOn();
 
-    ThreadPool pool(8); // depends on CPU cores
+    Logger::getInstance().log("Server initialized", LogLevel::INFO);
+}
 
-    while (true) {
-        Socket client = server.acceptClient();
-        if (!client.isValid()) continue;
+Server::~Server() {
+    running = false;
+    pool.shutdown();         // wait for tasks to finish
+    closesocket(serverSocket.getFd());
+    WSACleanup();
+    Logger::getInstance().log("Server destroyed safely", LogLevel::INFO);
+}
 
-        Logger::getInstance().log("Client accepted successfully!", LogLevel::INFO);
+void Server::run() {
+    Logger::getInstance().log("Server waiting for clients...", LogLevel::INFO);
 
-        pool.enqueue([clientPtr = std::make_shared<Socket>(std::move(client))]() mutable {
-            handleClient(std::move(*clientPtr));
+    while (running) {
+        Socket client = serverSocket.acceptClient();
+
+        if (!client.isValid()) {
+            if (!running) break;
+            continue;
+        }
+
+        Logger::getInstance().log("Client accepted", LogLevel::INFO);
+
+        pool.enqueue([client = std::make_shared<Socket>(std::move(client))]() {
+            handleClient(std::move(*client));
         });
     }
 
-    WSACleanup();
-    return 0;
+    Logger::getInstance().log("Stopped accepting new clients.", LogLevel::INFO);
 }
+

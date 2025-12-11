@@ -110,3 +110,7 @@ bool Socket::receiveDouble(double& value) {
     // }
     // return true;
 }
+
+SOCKET Socket::getFd() const{
+    return m_socket;
+}
