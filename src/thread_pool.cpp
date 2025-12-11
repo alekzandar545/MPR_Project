@@ -58,3 +58,6 @@ void ThreadPool::workerLoop() {
     }
 }
 
+int ThreadPool::getThreadCount() const{
+    return workers_.size();
+}

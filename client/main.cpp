@@ -10,9 +10,16 @@ int main() {
     }
 
     std::cout << "Connecting to server...\n";
-    if (!client.connectToServer("127.0.0.1", 5555)) {
-        std::cerr << "Connection failed!\n";
-        return 1;
+    while (!client.connectToServer("127.0.0.1", 5555)) {
+        std::cout << "Connection failed! Retry? (y/n): ";
+        char choice;
+        std::cin >> choice;
+        std::cin.get();
+        if (choice != 'y' && choice != 'Y') {
+            std::cout << "Exiting client.\n";
+            return 1;
+        }
+        std::cout << "Retrying conncection...\n";
     }
     std::cout << "Connected!\n";
 
@@ -30,7 +37,6 @@ int main() {
     // Receive response
     std::string message, preview;
     double tSingle, tMulti;
-
     if (!client.receiveResponse(message, tSingle, tMulti, preview)) {
         std::cerr << "Failed to receive response from server\n";
         system("pause"); //let client read message

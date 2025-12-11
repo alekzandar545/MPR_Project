@@ -1,7 +1,7 @@
 #include "server.hpp"
 #include "../include/matrix.hpp"
-#include <windows.h>
 #include <winsock2.h>
+#include <windows.h>
 
 std::atomic<bool> Server::running = true;
 Server* Server::instance = nullptr;
@@ -79,6 +79,7 @@ void handleClient(Socket client) {
             end = std::chrono::high_resolution_clock::now();
             timeMulti = std::chrono::duration<double,std::milli>(end - start).count();
         }
+        else{Logger::getInstance().log("Thread count = 1 -> skipping multithreading", LogLevel::INFO);}
 
         // Send response safely
         if (!sendResponse(client, m, timeSingle, timeMulti)) {
@@ -145,7 +146,28 @@ Server::~Server() {
     Logger::getInstance().log("Server destroyed safely", LogLevel::INFO);
 }
 
+void setConsoleColor(int color) {
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+}
+
+void Server::printStartupBanner(int port, int threadCount) const{
+    setConsoleColor(11); // bright cyan
+    std::cout << "====================================\n";
+    setConsoleColor(14); // yellow
+    std::cout << "      MULTI-THREAD MATRIX SERVER     \n";
+    setConsoleColor(11);
+    std::cout << "====================================\n";
+    setConsoleColor(15); // default white
+    std::cout << "Port: " << port << "\n";
+    std::cout << "Thread pool size: " << threadCount << "\n";
+    std::cout << "Max matrix elements: 100,000,000\n";
+    std::cout << "Server starting...\n\n";
+}
+
+
 void Server::run() {
+    printStartupBanner(port, pool.getThreadCount());
+    
     Logger::getInstance().log("Server waiting for clients...", LogLevel::INFO);
 
     while (running) {

@@ -14,6 +14,8 @@ public:
 
     void enqueue(std::function<void()> job);
     void shutdown();
+    
+    int getThreadCount() const;
 
 private:
     void workerLoop();

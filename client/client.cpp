@@ -54,7 +54,7 @@ bool Client::isValid() const {
 int getIntFromUser(const std::string& prompt) {
     int value;
     while (true) {
-        std::cout << prompt;
+        std::cout << prompt; 
         std::string input;
         std::getline(std::cin, input);
 

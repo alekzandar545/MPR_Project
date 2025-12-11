@@ -13,7 +13,8 @@ public:
 
 private:
     static BOOL WINAPI consoleHandler(DWORD signal);
-
+    void printStartupBanner(int port, int threadCount) const;
+    
 private:
     int port;
     ThreadPool pool;
