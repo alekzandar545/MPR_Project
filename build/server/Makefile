@@ -129,6 +129,30 @@ server/fast:
 	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f server\CMakeFiles\server.dir\build.make server/CMakeFiles/server.dir/build
 .PHONY : server/fast
 
+__/src/logger.obj: __/src/logger.cpp.obj
+.PHONY : __/src/logger.obj
+
+# target to build an object file
+__/src/logger.cpp.obj:
+	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f server\CMakeFiles\server.dir\build.make server/CMakeFiles/server.dir/__/src/logger.cpp.obj
+.PHONY : __/src/logger.cpp.obj
+
+__/src/logger.i: __/src/logger.cpp.i
+.PHONY : __/src/logger.i
+
+# target to preprocess a source file
+__/src/logger.cpp.i:
+	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f server\CMakeFiles\server.dir\build.make server/CMakeFiles/server.dir/__/src/logger.cpp.i
+.PHONY : __/src/logger.cpp.i
+
+__/src/logger.s: __/src/logger.cpp.s
+.PHONY : __/src/logger.s
+
+# target to generate assembly for a file
+__/src/logger.cpp.s:
+	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f server\CMakeFiles\server.dir\build.make server/CMakeFiles/server.dir/__/src/logger.cpp.s
+.PHONY : __/src/logger.cpp.s
+
 __/src/matrix.obj: __/src/matrix.cpp.obj
 .PHONY : __/src/matrix.obj
 
@@ -177,6 +201,30 @@ __/src/socket.cpp.s:
 	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f server\CMakeFiles\server.dir\build.make server/CMakeFiles/server.dir/__/src/socket.cpp.s
 .PHONY : __/src/socket.cpp.s
 
+__/src/thread_pool.obj: __/src/thread_pool.cpp.obj
+.PHONY : __/src/thread_pool.obj
+
+# target to build an object file
+__/src/thread_pool.cpp.obj:
+	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f server\CMakeFiles\server.dir\build.make server/CMakeFiles/server.dir/__/src/thread_pool.cpp.obj
+.PHONY : __/src/thread_pool.cpp.obj
+
+__/src/thread_pool.i: __/src/thread_pool.cpp.i
+.PHONY : __/src/thread_pool.i
+
+# target to preprocess a source file
+__/src/thread_pool.cpp.i:
+	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f server\CMakeFiles\server.dir\build.make server/CMakeFiles/server.dir/__/src/thread_pool.cpp.i
+.PHONY : __/src/thread_pool.cpp.i
+
+__/src/thread_pool.s: __/src/thread_pool.cpp.s
+.PHONY : __/src/thread_pool.s
+
+# target to generate assembly for a file
+__/src/thread_pool.cpp.s:
+	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f server\CMakeFiles\server.dir\build.make server/CMakeFiles/server.dir/__/src/thread_pool.cpp.s
+.PHONY : __/src/thread_pool.cpp.s
+
 server.obj: server.cpp.obj
 .PHONY : server.obj
 
@@ -210,12 +258,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... server
+	@echo ... __/src/logger.obj
+	@echo ... __/src/logger.i
+	@echo ... __/src/logger.s
 	@echo ... __/src/matrix.obj
 	@echo ... __/src/matrix.i
 	@echo ... __/src/matrix.s
 	@echo ... __/src/socket.obj
 	@echo ... __/src/socket.i
 	@echo ... __/src/socket.s
+	@echo ... __/src/thread_pool.obj
+	@echo ... __/src/thread_pool.i
+	@echo ... __/src/thread_pool.s
 	@echo ... server.obj
 	@echo ... server.i
 	@echo ... server.s

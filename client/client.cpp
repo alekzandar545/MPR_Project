@@ -49,8 +49,19 @@ int main() {
     client.receiveDouble(tSingle);
     client.receiveDouble(tMulti);
 
+    std::cout << '\n';
     std::cout << "Single-thread: " << tSingle << " ms\n";
     std::cout << "Multi-thread: " << tMulti << " ms\n";
+
+    //previewing the matrix
+    std::cout << '\n';
+    client.receiveInt(len);
+    std::string preview(len,0);
+    client.receiveRaw(preview.data(), len);
+    std::cout << preview;
+
+    std::cout << '\n';
+    system("pause"); //review results
 
     WSACleanup();
     return 0;

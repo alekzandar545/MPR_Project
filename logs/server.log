@@ -1,0 +1,41 @@
+[2025-12-11 12:46:58] [INFO] [Thread-0] Server waiting for client...
+[2025-12-11 12:47:42] [INFO] [Thread-0] Server waiting for client...
+[2025-12-11 12:47:47] [INFO] [Thread-0] Client accepted successfully!
+[2025-12-11 12:47:47] [INFO] [Thread-1] Handling client
+[2025-12-11 12:47:50] [DEBUG] [Thread-1] Received params: rows=10 cols=10 threads=2
+[2025-12-11 12:47:50] [INFO] [Thread-1] Client disconnected
+[2025-12-11 12:55:16] [INFO] [Thread-0] Server waiting for client...
+[2025-12-11 12:56:19] [INFO] [Thread-0] Server waiting for client...
+[2025-12-11 12:56:22] [INFO] [Thread-0] Client accepted successfully!
+[2025-12-11 12:56:22] [INFO] [Thread-1] Handling client
+[2025-12-11 12:56:37] [DEBUG] [Thread-1] Received params: rows=10000 cols=100 threads=2
+[2025-12-11 12:56:37] [INFO] [Thread-1] Client disconnected
+[2025-12-11 13:00:31] [INFO] [Thread-0] Server waiting for client...
+[2025-12-11 13:00:33] [INFO] [Thread-0] Client accepted successfully!
+[2025-12-11 13:00:33] [INFO] [Thread-1] Handling client
+[2025-12-11 13:00:37] [DEBUG] [Thread-1] Received params: rows=10 cols=10 threads=2
+[2025-12-11 13:00:37] [INFO] [Thread-1] Client disconnected
+[2025-12-11 13:00:43] [INFO] [Thread-0] Server waiting for client...
+[2025-12-11 13:00:48] [INFO] [Thread-0] Client accepted successfully!
+[2025-12-11 13:00:48] [INFO] [Thread-1] Handling client
+[2025-12-11 13:00:52] [DEBUG] [Thread-1] Received params: rows=10 cols=20 threads=30
+[2025-12-11 13:00:52] [INFO] [Thread-1] Client disconnected
+[2025-12-11 13:01:18] [INFO] [Thread-0] Client accepted successfully!
+[2025-12-11 13:01:18] [INFO] [Thread-2] Handling client
+[2025-12-11 13:01:19] [DEBUG] [Thread-2] Received params: rows=0 cols=21 threads=0
+[2025-12-11 13:01:42] [INFO] [Thread-0] Server waiting for client...
+[2025-12-11 13:01:46] [INFO] [Thread-0] Client accepted successfully!
+[2025-12-11 13:01:46] [INFO] [Thread-1] Handling client
+[2025-12-11 13:01:49] [DEBUG] [Thread-1] Received params: rows=10 cols=10 threads=2
+[2025-12-11 13:01:49] [INFO] [Thread-1] Client disconnected
+[2025-12-11 13:02:24] [INFO] [Thread-0] Server waiting for client...
+[2025-12-11 13:02:38] [INFO] [Thread-0] Server waiting for client...
+[2025-12-11 13:02:40] [INFO] [Thread-0] Client accepted successfully!
+[2025-12-11 13:02:40] [INFO] [Thread-1] Handling client
+[2025-12-11 13:02:46] [DEBUG] [Thread-1] Received params: rows=100 cols=100 threads=2
+[2025-12-11 13:02:46] [INFO] [Thread-1] Client disconnected
+[2025-12-11 13:04:06] [INFO] [Thread-0] Server waiting for client...
+[2025-12-11 13:04:09] [INFO] [Thread-0] Client accepted successfully!
+[2025-12-11 13:04:09] [INFO] [Thread-1] Handling client
+[2025-12-11 13:04:14] [DEBUG] [Thread-1] Received params: rows=100 cols=10000 threads=4
+[2025-12-11 13:04:14] [INFO] [Thread-1] Client disconnected

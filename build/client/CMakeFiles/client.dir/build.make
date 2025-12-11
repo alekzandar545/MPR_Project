@@ -116,11 +116,43 @@ client/CMakeFiles/client.dir/__/src/socket.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/client.dir/__/src/socket.cpp.s"
 	cd /d C:\Users\User\Documents\git\MPR_Project\build\client && C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\git\MPR_Project\src\socket.cpp -o CMakeFiles\client.dir\__\src\socket.cpp.s
 
+client/CMakeFiles/client.dir/__/src/thread_pool.cpp.obj: client/CMakeFiles/client.dir/flags.make
+client/CMakeFiles/client.dir/__/src/thread_pool.cpp.obj: client/CMakeFiles/client.dir/includes_CXX.rsp
+client/CMakeFiles/client.dir/__/src/thread_pool.cpp.obj: C:/Users/User/Documents/git/MPR_Project/src/thread_pool.cpp
+client/CMakeFiles/client.dir/__/src/thread_pool.cpp.obj: client/CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object client/CMakeFiles/client.dir/__/src/thread_pool.cpp.obj"
+	cd /d C:\Users\User\Documents\git\MPR_Project\build\client && C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT client/CMakeFiles/client.dir/__/src/thread_pool.cpp.obj -MF CMakeFiles\client.dir\__\src\thread_pool.cpp.obj.d -o CMakeFiles\client.dir\__\src\thread_pool.cpp.obj -c C:\Users\User\Documents\git\MPR_Project\src\thread_pool.cpp
+
+client/CMakeFiles/client.dir/__/src/thread_pool.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/client.dir/__/src/thread_pool.cpp.i"
+	cd /d C:\Users\User\Documents\git\MPR_Project\build\client && C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\git\MPR_Project\src\thread_pool.cpp > CMakeFiles\client.dir\__\src\thread_pool.cpp.i
+
+client/CMakeFiles/client.dir/__/src/thread_pool.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/client.dir/__/src/thread_pool.cpp.s"
+	cd /d C:\Users\User\Documents\git\MPR_Project\build\client && C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\git\MPR_Project\src\thread_pool.cpp -o CMakeFiles\client.dir\__\src\thread_pool.cpp.s
+
+client/CMakeFiles/client.dir/__/src/logger.cpp.obj: client/CMakeFiles/client.dir/flags.make
+client/CMakeFiles/client.dir/__/src/logger.cpp.obj: client/CMakeFiles/client.dir/includes_CXX.rsp
+client/CMakeFiles/client.dir/__/src/logger.cpp.obj: C:/Users/User/Documents/git/MPR_Project/src/logger.cpp
+client/CMakeFiles/client.dir/__/src/logger.cpp.obj: client/CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object client/CMakeFiles/client.dir/__/src/logger.cpp.obj"
+	cd /d C:\Users\User\Documents\git\MPR_Project\build\client && C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT client/CMakeFiles/client.dir/__/src/logger.cpp.obj -MF CMakeFiles\client.dir\__\src\logger.cpp.obj.d -o CMakeFiles\client.dir\__\src\logger.cpp.obj -c C:\Users\User\Documents\git\MPR_Project\src\logger.cpp
+
+client/CMakeFiles/client.dir/__/src/logger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/client.dir/__/src/logger.cpp.i"
+	cd /d C:\Users\User\Documents\git\MPR_Project\build\client && C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\git\MPR_Project\src\logger.cpp > CMakeFiles\client.dir\__\src\logger.cpp.i
+
+client/CMakeFiles/client.dir/__/src/logger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/client.dir/__/src/logger.cpp.s"
+	cd /d C:\Users\User\Documents\git\MPR_Project\build\client && C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\git\MPR_Project\src\logger.cpp -o CMakeFiles\client.dir\__\src\logger.cpp.s
+
 # Object files for target client
 client_OBJECTS = \
 "CMakeFiles/client.dir/client.cpp.obj" \
 "CMakeFiles/client.dir/__/src/matrix.cpp.obj" \
-"CMakeFiles/client.dir/__/src/socket.cpp.obj"
+"CMakeFiles/client.dir/__/src/socket.cpp.obj" \
+"CMakeFiles/client.dir/__/src/thread_pool.cpp.obj" \
+"CMakeFiles/client.dir/__/src/logger.cpp.obj"
 
 # External object files for target client
 client_EXTERNAL_OBJECTS =
@@ -128,11 +160,13 @@ client_EXTERNAL_OBJECTS =
 bin/client.exe: client/CMakeFiles/client.dir/client.cpp.obj
 bin/client.exe: client/CMakeFiles/client.dir/__/src/matrix.cpp.obj
 bin/client.exe: client/CMakeFiles/client.dir/__/src/socket.cpp.obj
+bin/client.exe: client/CMakeFiles/client.dir/__/src/thread_pool.cpp.obj
+bin/client.exe: client/CMakeFiles/client.dir/__/src/logger.cpp.obj
 bin/client.exe: client/CMakeFiles/client.dir/build.make
 bin/client.exe: client/CMakeFiles/client.dir/linkLibs.rsp
 bin/client.exe: client/CMakeFiles/client.dir/objects1.rsp
 bin/client.exe: client/CMakeFiles/client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ..\bin\client.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\User\Documents\git\MPR_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ..\bin\client.exe"
 	cd /d C:\Users\User\Documents\git\MPR_Project\build\client && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\client.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

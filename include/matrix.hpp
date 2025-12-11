@@ -2,13 +2,15 @@
 #include <vector>
 #include <thread>
 #include <functional>
+#include <sstream>
 
 class Matrix {
 public:
     Matrix(int rows, int cols);
     
-    void fillSingleThreaded(std::function<int(int,int)> filler);
-    void fillMultiThreaded(std::function<int(int,int)> filler, int numThreads);
+    void fillSingleThreaded();
+    void fillMultiThreaded(int numThreads);
+    std::string previewMatrix();
 
     int rows() const;
     int cols() const;

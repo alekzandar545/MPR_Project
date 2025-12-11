@@ -7,4 +7,6 @@ target_link_libraries(server PRIVATE ws2_32)
 target_sources(server PRIVATE
     ${CMAKE_SOURCE_DIR}/src/matrix.cpp
     ${CMAKE_SOURCE_DIR}/src/socket.cpp
+    ${CMAKE_SOURCE_DIR}/src/thread_pool.cpp
+    ${CMAKE_SOURCE_DIR}/src/logger.cpp
 )

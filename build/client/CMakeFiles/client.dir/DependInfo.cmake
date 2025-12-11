@@ -8,8 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/User/Documents/git/MPR_Project/src/logger.cpp" "client/CMakeFiles/client.dir/__/src/logger.cpp.obj" "gcc" "client/CMakeFiles/client.dir/__/src/logger.cpp.obj.d"
   "C:/Users/User/Documents/git/MPR_Project/src/matrix.cpp" "client/CMakeFiles/client.dir/__/src/matrix.cpp.obj" "gcc" "client/CMakeFiles/client.dir/__/src/matrix.cpp.obj.d"
   "C:/Users/User/Documents/git/MPR_Project/src/socket.cpp" "client/CMakeFiles/client.dir/__/src/socket.cpp.obj" "gcc" "client/CMakeFiles/client.dir/__/src/socket.cpp.obj.d"
+  "C:/Users/User/Documents/git/MPR_Project/src/thread_pool.cpp" "client/CMakeFiles/client.dir/__/src/thread_pool.cpp.obj" "gcc" "client/CMakeFiles/client.dir/__/src/thread_pool.cpp.obj.d"
   "C:/Users/User/Documents/git/MPR_Project/client/client.cpp" "client/CMakeFiles/client.dir/client.cpp.obj" "gcc" "client/CMakeFiles/client.dir/client.cpp.obj.d"
   )
 
