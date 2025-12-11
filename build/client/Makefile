@@ -249,6 +249,30 @@ client.cpp.s:
 	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f client\CMakeFiles\client.dir\build.make client/CMakeFiles/client.dir/client.cpp.s
 .PHONY : client.cpp.s
 
+main.obj: main.cpp.obj
+.PHONY : main.obj
+
+# target to build an object file
+main.cpp.obj:
+	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f client\CMakeFiles\client.dir\build.make client/CMakeFiles/client.dir/main.cpp.obj
+.PHONY : main.cpp.obj
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f client\CMakeFiles\client.dir\build.make client/CMakeFiles/client.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	cd /d C:\Users\User\Documents\git\MPR_Project\build && $(MAKE) $(MAKESILENT) -f client\CMakeFiles\client.dir\build.make client/CMakeFiles/client.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -273,6 +297,9 @@ help:
 	@echo ... client.obj
 	@echo ... client.i
 	@echo ... client.s
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
 .PHONY : help
 
 

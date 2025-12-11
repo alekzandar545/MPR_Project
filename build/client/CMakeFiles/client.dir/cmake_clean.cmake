@@ -12,6 +12,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/client.dir/__/src/thread_pool.cpp.obj.d"
   "CMakeFiles/client.dir/client.cpp.obj"
   "CMakeFiles/client.dir/client.cpp.obj.d"
+  "CMakeFiles/client.dir/main.cpp.obj"
+  "CMakeFiles/client.dir/main.cpp.obj.d"
   "libclient.dll.a"
 )
 

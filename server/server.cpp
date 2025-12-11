@@ -6,54 +6,94 @@
 std::atomic<bool> Server::running = true;
 Server* Server::instance = nullptr;
 
+bool sendResponse(Socket& client, Matrix& m, double timeSingle, double timeMulti) {
+    try {
+        // Send acknowledgment
+        std::string msg = "Parameters received OK!";
+        client.sendInt(msg.size());
+        client.sendAll(msg.c_str(), msg.size());
+
+        // Send timing info
+        client.sendDouble(timeSingle);
+        client.sendDouble(timeMulti);
+
+        // Send matrix preview
+        std::string preview = m.previewMatrix();
+        client.sendInt(preview.size());
+        client.sendAll(preview.c_str(), preview.size());
+
+        Logger::getInstance().log("Client response sent successfully", LogLevel::INFO);
+        return true;
+    }
+    catch (const std::exception& e) {
+        Logger::getInstance().log(
+            std::string("Error sending response to client: ") + e.what(),
+            LogLevel::ERR
+        );
+        return false;
+    }
+    catch (...) {
+        Logger::getInstance().log("Unknown error occurred during response", LogLevel::ERR);
+        return false;
+    }
+}
+
+
 void handleClient(Socket client) {
     Logger::getInstance().log("Handling client", LogLevel::INFO);
 
-    int rows, cols, threads;
+    try {
+        int rows, cols, threads;
 
-    if (!client.receiveInt(rows) ||
-        !client.receiveInt(cols) ||
-        !client.receiveInt(threads))
-    {
+        if (!client.receiveInt(rows) ||
+            !client.receiveInt(cols) ||
+            !client.receiveInt(threads)) 
+        {
+            Logger::getInstance().log("Failed to receive parameters from client", LogLevel::ERR);
+            return;
+        }
+
+        if (rows <= 0 || cols <= 0 || threads <= 0) {
+            std::string errMsg = "Invalid parameters sent from client!";
+            Logger::getInstance().log(errMsg, LogLevel::ERR);
+            client.sendInt(errMsg.size());
+            client.sendAll(errMsg.c_str(), errMsg.size());
+            return;
+        }
+
+        Matrix m(rows, cols);
+
+        auto start = std::chrono::high_resolution_clock::now();
+        m.fillSingleThreaded();
+        auto end = std::chrono::high_resolution_clock::now();
+        double timeSingle = std::chrono::duration<double,std::milli>(end - start).count();
+
+        double timeMulti = timeSingle; //same time for when threads=1
+        if (threads > 1) {
+            start = std::chrono::high_resolution_clock::now();
+            m.fillMultiThreaded(threads);
+            end = std::chrono::high_resolution_clock::now();
+            timeMulti = std::chrono::duration<double,std::milli>(end - start).count();
+        }
+
+        // Send response safely
+        if (!sendResponse(client, m, timeSingle, timeMulti)) {
+            Logger::getInstance().log("Failed to send full response to client", LogLevel::ERR);
+            return;
+        }
+
+        //log success if everything is completed
+        Logger::getInstance().log("Client handled successfully", LogLevel::INFO);
+    }
+    catch (const std::exception& e) {
         Logger::getInstance().log(
-            "Failed to receive parameters from client",
+            std::string("Exception while handling client: ") + e.what(),
             LogLevel::ERR
         );
-        return;
     }
-
-    if (rows <= 0 || cols <= 0 || threads <= 0) {
-        std::string errMsg = "Invalid parameters!";
-        client.sendInt(errMsg.size());
-        client.sendAll(errMsg.c_str(), errMsg.size());
-        return;
+    catch (...) {
+        Logger::getInstance().log("Unknown exception occurred while handling client", LogLevel::ERR);
     }
-
-    Matrix m(rows, cols);
-
-    auto start = std::chrono::high_resolution_clock::now();
-    m.fillSingleThreaded();
-    auto end = std::chrono::high_resolution_clock::now();
-    double timeSingle = std::chrono::duration<double,std::milli>(end - start).count();
-
-    double timeMulti = timeSingle;
-    if (threads > 1) {
-        start = std::chrono::high_resolution_clock::now();
-        m.fillMultiThreaded(threads);
-        end = std::chrono::high_resolution_clock::now();
-        timeMulti = std::chrono::duration<double,std::milli>(end - start).count();
-    }
-
-    std::string msg = "Parameters received OK!";
-    client.sendInt(msg.size());
-    client.sendAll(msg.c_str(), msg.size());
-
-    client.sendDouble(timeSingle);
-    client.sendDouble(timeMulti);
-
-    std::string preview = m.previewMatrix();
-    client.sendInt(preview.size());
-    client.sendAll(preview.c_str(), preview.size());
 }
 
 

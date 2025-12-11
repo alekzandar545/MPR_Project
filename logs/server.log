@@ -455,3 +455,210 @@
 [2025-12-11 23:37:23] [INFO] [Thread-2] CTRL+C received, shutting down server...
 [2025-12-11 23:37:23] [INFO] [Thread-0] Stopped accepting new clients.
 [2025-12-11 23:37:51] [INFO] [Thread-0] Server destroyed safely
+[2025-12-11 23:52:24] [INFO] [Thread-0] Server initialized
+[2025-12-11 23:52:24] [INFO] [Thread-0] Server waiting for clients...
+[2025-12-11 23:52:25] [INFO] [Thread-0] Client accepted
+[2025-12-11 23:52:25] [INFO] [Thread-1] Handling client
+[2025-12-11 23:52:40] [INFO] [Thread-0] Client accepted
+[2025-12-11 23:52:40] [INFO] [Thread-2] Handling client
+[2025-12-11 23:52:43] [ERROR] [Thread-2] Failed to receive parameters from client
+[2025-12-11 23:52:49] [INFO] [Thread-0] Client accepted
+[2025-12-11 23:52:49] [INFO] [Thread-3] Handling client
+[2025-12-11 23:52:52] [ERROR] [Thread-3] Failed to receive parameters from client
+[2025-12-11 23:52:54] [INFO] [Thread-0] Client accepted
+[2025-12-11 23:52:54] [INFO] [Thread-4] Handling client
+[2025-12-11 23:53:02] [INFO] [Thread-0] Client accepted
+[2025-12-11 23:53:02] [INFO] [Thread-5] Handling client
+[2025-12-11 23:53:11] [INFO] [Thread-0] Client accepted
+[2025-12-11 23:53:11] [INFO] [Thread-6] Handling client
+[2025-12-11 23:53:22] [INFO] [Thread-0] Client accepted
+[2025-12-11 23:53:22] [INFO] [Thread-7] Handling client
+[2025-12-11 23:53:23] [INFO] [Thread-8] CTRL+C received, shutting down server...
+[2025-12-11 23:53:23] [INFO] [Thread-0] Stopped accepting new clients.
+[2025-12-11 23:53:27] [INFO] [Thread-0] Server destroyed safely
+[2025-12-11 23:53:39] [INFO] [Thread-0] Server initialized
+[2025-12-11 23:53:39] [INFO] [Thread-0] Server waiting for clients...
+[2025-12-11 23:53:40] [INFO] [Thread-0] Client accepted
+[2025-12-11 23:53:40] [INFO] [Thread-1] Handling client
+[2025-12-11 23:53:47] [INFO] [Thread-0] Client accepted
+[2025-12-11 23:53:47] [INFO] [Thread-2] Handling client
+[2025-12-11 23:53:57] [INFO] [Thread-3] CTRL+C received, shutting down server...
+[2025-12-11 23:53:57] [INFO] [Thread-0] Stopped accepting new clients.
+[2025-12-11 23:53:57] [INFO] [Thread-0] Server destroyed safely
+[2025-12-11 23:54:52] [INFO] [Thread-0] Server initialized
+[2025-12-11 23:54:52] [INFO] [Thread-0] Server waiting for clients...
+[2025-12-11 23:54:54] [INFO] [Thread-0] Client accepted
+[2025-12-11 23:54:54] [INFO] [Thread-1] Handling client
+[2025-12-12 00:00:33] [INFO] [Thread-0] Server initialized
+[2025-12-12 00:00:33] [INFO] [Thread-0] Server waiting for clients...
+[2025-12-12 00:00:33] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:00:33] [INFO] [Thread-1] Handling client
+[2025-12-12 00:00:42] [ERROR] [Thread-1] Invalid parameters sent from client!
+[2025-12-12 00:01:10] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:01:16] [INFO] [Thread-2] Handling client
+[2025-12-12 00:01:22] [INFO] [Thread-3] CTRL+C received, shutting down server...
+[2025-12-12 00:01:22] [INFO] [Thread-0] Stopped accepting new clients.
+[2025-12-12 00:01:22] [INFO] [Thread-0] Server destroyed safely
+[2025-12-12 00:01:27] [INFO] [Thread-0] Server initialized
+[2025-12-12 00:01:27] [INFO] [Thread-0] Server waiting for clients...
+[2025-12-12 00:01:28] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:01:28] [INFO] [Thread-1] Handling client
+[2025-12-12 00:01:40] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:01:40] [INFO] [Thread-2] Handling client
+[2025-12-12 00:01:52] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:01:52] [INFO] [Thread-3] Handling client
+[2025-12-12 00:02:06] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:02:06] [INFO] [Thread-4] Handling client
+[2025-12-12 00:02:12] [ERROR] [Thread-4] Invalid parameters sent from client!
+[2025-12-12 00:02:47] [INFO] [Thread-0] Server initialized
+[2025-12-12 00:02:47] [INFO] [Thread-0] Server waiting for clients...
+[2025-12-12 00:14:34] [INFO] [Thread-0] Server initialized
+[2025-12-12 00:14:34] [INFO] [Thread-0] Server waiting for clients...
+[2025-12-12 00:14:35] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:14:35] [INFO] [Thread-1] Handling client
+[2025-12-12 00:14:43] [INFO] [Thread-1] Client response sent successfully
+[2025-12-12 00:15:00] [INFO] [Thread-1] Client handled successfully
+[2025-12-12 00:15:00] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:15:00] [INFO] [Thread-2] Handling client
+[2025-12-12 00:15:13] [ERROR] [Thread-2] Invalid parameters sent from client!
+[2025-12-12 00:16:55] [INFO] [Thread-3] CTRL+C received, shutting down server...
+[2025-12-12 00:16:55] [INFO] [Thread-0] Stopped accepting new clients.
+[2025-12-12 00:16:55] [INFO] [Thread-0] Server destroyed safely
+[2025-12-12 00:16:59] [INFO] [Thread-0] Server initialized
+[2025-12-12 00:16:59] [INFO] [Thread-0] Server waiting for clients...
+[2025-12-12 00:17:01] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:17:01] [INFO] [Thread-1] Handling client
+[2025-12-12 00:17:06] [ERROR] [Thread-1] Invalid parameters sent from client!
+[2025-12-12 00:17:10] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:17:10] [INFO] [Thread-2] Handling client
+[2025-12-12 00:17:10] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:17:10] [INFO] [Thread-3] Handling client
+[2025-12-12 00:17:15] [INFO] [Thread-3] Client response sent successfully
+[2025-12-12 00:17:15] [INFO] [Thread-3] Client handled successfully
+[2025-12-12 00:17:32] [INFO] [Thread-2] Client response sent successfully
+[2025-12-12 00:17:32] [INFO] [Thread-2] Client handled successfully
+[2025-12-12 00:17:37] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:17:37] [INFO] [Thread-4] Handling client
+[2025-12-12 00:17:41] [ERROR] [Thread-4] Invalid parameters sent from client!
+[2025-12-12 00:17:47] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:17:47] [INFO] [Thread-5] Handling client
+[2025-12-12 00:17:48] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:17:48] [INFO] [Thread-6] Handling client
+[2025-12-12 00:17:48] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:17:48] [INFO] [Thread-7] Handling client
+[2025-12-12 00:17:49] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:17:49] [INFO] [Thread-8] Handling client
+[2025-12-12 00:17:50] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:17:50] [INFO] [Thread-1] Handling client
+[2025-12-12 00:17:51] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:17:51] [INFO] [Thread-3] Handling client
+[2025-12-12 00:17:51] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:17:51] [INFO] [Thread-2] Handling client
+[2025-12-12 00:17:52] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:17:52] [INFO] [Thread-4] Handling client
+[2025-12-12 00:17:53] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:18:02] [INFO] [Thread-4] Client response sent successfully
+[2025-12-12 00:18:02] [INFO] [Thread-4] Client handled successfully
+[2025-12-12 00:18:02] [INFO] [Thread-4] Handling client
+[2025-12-12 00:18:02] [INFO] [Thread-4] Client response sent successfully
+[2025-12-12 00:18:02] [INFO] [Thread-4] Client handled successfully
+[2025-12-12 00:18:07] [INFO] [Thread-3] Client response sent successfully
+[2025-12-12 00:18:07] [INFO] [Thread-3] Client handled successfully
+[2025-12-12 00:18:10] [INFO] [Thread-2] Client response sent successfully
+[2025-12-12 00:18:10] [INFO] [Thread-2] Client handled successfully
+[2025-12-12 00:18:13] [INFO] [Thread-1] Client response sent successfully
+[2025-12-12 00:18:13] [INFO] [Thread-1] Client handled successfully
+[2025-12-12 00:18:17] [ERROR] [Thread-8] Invalid parameters sent from client!
+[2025-12-12 00:18:20] [INFO] [Thread-7] Client response sent successfully
+[2025-12-12 00:18:20] [INFO] [Thread-7] Client handled successfully
+[2025-12-12 00:18:26] [ERROR] [Thread-6] Invalid parameters sent from client!
+[2025-12-12 00:18:29] [INFO] [Thread-5] Client response sent successfully
+[2025-12-12 00:18:29] [INFO] [Thread-5] Client handled successfully
+[2025-12-12 00:18:46] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:18:59] [INFO] [Thread-4] Handling client
+[2025-12-12 00:18:59] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:18:59] [ERROR] [Thread-4] Failed to receive parameters from client
+[2025-12-12 00:18:59] [INFO] [Thread-3] Handling client
+[2025-12-12 00:19:03] [INFO] [Thread-3] Client response sent successfully
+[2025-12-12 00:19:03] [INFO] [Thread-3] Client handled successfully
+[2025-12-12 00:19:08] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:19:08] [INFO] [Thread-2] Handling client
+[2025-12-12 00:19:11] [INFO] [Thread-2] Client response sent successfully
+[2025-12-12 00:19:11] [INFO] [Thread-2] Client handled successfully
+[2025-12-12 00:19:14] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:19:14] [INFO] [Thread-1] Handling client
+[2025-12-12 00:19:18] [INFO] [Thread-1] Client response sent successfully
+[2025-12-12 00:19:18] [INFO] [Thread-1] Client handled successfully
+[2025-12-12 00:19:20] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:19:20] [INFO] [Thread-8] Handling client
+[2025-12-12 00:19:29] [ERROR] [Thread-8] Invalid parameters sent from client!
+[2025-12-12 00:19:31] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:19:31] [INFO] [Thread-7] Handling client
+[2025-12-12 00:19:33] [ERROR] [Thread-7] Failed to receive parameters from client
+[2025-12-12 00:19:35] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:19:35] [INFO] [Thread-6] Handling client
+[2025-12-12 00:19:39] [ERROR] [Thread-6] Failed to receive parameters from client
+[2025-12-12 00:19:41] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:19:41] [INFO] [Thread-5] Handling client
+[2025-12-12 00:19:42] [ERROR] [Thread-5] Failed to receive parameters from client
+[2025-12-12 00:19:48] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:19:48] [INFO] [Thread-4] Handling client
+[2025-12-12 00:19:50] [ERROR] [Thread-4] Failed to receive parameters from client
+[2025-12-12 00:19:52] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:19:52] [INFO] [Thread-3] Handling client
+[2025-12-12 00:19:59] [INFO] [Thread-3] Client response sent successfully
+[2025-12-12 00:19:59] [INFO] [Thread-3] Client handled successfully
+[2025-12-12 00:20:02] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:20:02] [INFO] [Thread-2] Handling client
+[2025-12-12 00:20:15] [INFO] [Thread-2] Client response sent successfully
+[2025-12-12 00:20:15] [INFO] [Thread-2] Client handled successfully
+[2025-12-12 00:21:00] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:21:10] [INFO] [Thread-1] Handling client
+[2025-12-12 00:21:11] [INFO] [Thread-1] Client response sent successfully
+[2025-12-12 00:21:11] [INFO] [Thread-1] Client handled successfully
+[2025-12-12 00:21:15] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:21:15] [INFO] [Thread-8] Handling client
+[2025-12-12 00:21:19] [INFO] [Thread-8] Client response sent successfully
+[2025-12-12 00:21:19] [INFO] [Thread-8] Client handled successfully
+[2025-12-12 00:21:23] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:21:23] [INFO] [Thread-7] Handling client
+[2025-12-12 00:21:28] [INFO] [Thread-7] Client response sent successfully
+[2025-12-12 00:21:28] [INFO] [Thread-7] Client handled successfully
+[2025-12-12 00:21:33] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:21:33] [INFO] [Thread-6] Handling client
+[2025-12-12 00:21:45] [INFO] [Thread-6] Client response sent successfully
+[2025-12-12 00:21:45] [INFO] [Thread-6] Client handled successfully
+[2025-12-12 00:23:08] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:23:10] [INFO] [Thread-5] Handling client
+[2025-12-12 00:23:15] [INFO] [Thread-5] Client response sent successfully
+[2025-12-12 00:23:15] [INFO] [Thread-5] Client handled successfully
+[2025-12-12 00:23:18] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:23:18] [INFO] [Thread-4] Handling client
+[2025-12-12 00:23:22] [INFO] [Thread-4] Client response sent successfully
+[2025-12-12 00:23:22] [INFO] [Thread-4] Client handled successfully
+[2025-12-12 00:23:27] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:23:27] [INFO] [Thread-3] Handling client
+[2025-12-12 00:23:34] [INFO] [Thread-3] Client response sent successfully
+[2025-12-12 00:23:34] [INFO] [Thread-3] Client handled successfully
+[2025-12-12 00:29:01] [INFO] [Thread-0] Server initialized
+[2025-12-12 00:29:01] [INFO] [Thread-0] Server waiting for clients...
+[2025-12-12 00:29:02] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:29:02] [INFO] [Thread-1] Handling client
+[2025-12-12 00:29:06] [INFO] [Thread-1] Client response sent successfully
+[2025-12-12 00:29:06] [INFO] [Thread-1] Client handled successfully
+[2025-12-12 00:29:16] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:29:16] [INFO] [Thread-2] Handling client
+[2025-12-12 00:29:21] [INFO] [Thread-2] Client response sent successfully
+[2025-12-12 00:29:21] [INFO] [Thread-2] Client handled successfully
+[2025-12-12 00:29:55] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:29:55] [INFO] [Thread-3] Handling client
+[2025-12-12 00:29:57] [INFO] [Thread-4] CTRL+C received, shutting down server...
+[2025-12-12 00:29:57] [INFO] [Thread-0] Stopped accepting new clients.
+[2025-12-12 00:30:02] [INFO] [Thread-3] Client response sent successfully
+[2025-12-12 00:30:02] [INFO] [Thread-3] Client handled successfully
+[2025-12-12 00:30:02] [INFO] [Thread-0] Server destroyed safely
+[2025-12-12 00:30:24] [INFO] [Thread-0] Server initialized
+[2025-12-12 00:30:24] [INFO] [Thread-0] Server waiting for clients...
+[2025-12-12 00:30:25] [INFO] [Thread-0] Client accepted
+[2025-12-12 00:30:25] [INFO] [Thread-1] Handling client
+[2025-12-12 00:30:26] [ERROR] [Thread-1] Failed to receive parameters from client

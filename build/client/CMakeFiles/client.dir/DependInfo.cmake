@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/User/Documents/git/MPR_Project/src/socket.cpp" "client/CMakeFiles/client.dir/__/src/socket.cpp.obj" "gcc" "client/CMakeFiles/client.dir/__/src/socket.cpp.obj.d"
   "C:/Users/User/Documents/git/MPR_Project/src/thread_pool.cpp" "client/CMakeFiles/client.dir/__/src/thread_pool.cpp.obj" "gcc" "client/CMakeFiles/client.dir/__/src/thread_pool.cpp.obj.d"
   "C:/Users/User/Documents/git/MPR_Project/client/client.cpp" "client/CMakeFiles/client.dir/client.cpp.obj" "gcc" "client/CMakeFiles/client.dir/client.cpp.obj.d"
+  "C:/Users/User/Documents/git/MPR_Project/client/main.cpp" "client/CMakeFiles/client.dir/main.cpp.obj" "gcc" "client/CMakeFiles/client.dir/main.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
