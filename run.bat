@@ -1,6 +1,10 @@
 @echo off
 echo === Starting build ===
 
+REM --- local CMake ---
+set CMAKE_DIR=%~dp0tools\CMake\bin
+set PATH=%CMAKE_DIR%;%PATH%
+
 set BUILD_DIR=build
 
 REM --- Clean previous build ---
