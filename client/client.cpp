@@ -1,9 +1,6 @@
 #include "client.hpp"
 #include <iostream>
 
-// -------------------
-// Client implementation
-// -------------------
 Client::Client() {
     WSAData wsa;
     WSAStartup(MAKEWORD(2, 2), &wsa);
@@ -11,7 +8,7 @@ Client::Client() {
 }
 
 Client::~Client() {
-    // Socket RAII will handle closing
+    //socket RAII will handle closing
     WSACleanup();
 }
 
@@ -48,9 +45,7 @@ bool Client::isValid() const {
     return socket_.isValid();
 }
 
-// -------------------
-// Safe integer input
-// -------------------
+//safe integer input
 int getIntFromUser(const std::string& prompt) {
     int value;
     while (true) {

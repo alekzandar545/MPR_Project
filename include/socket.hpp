@@ -7,38 +7,34 @@
 
 class Socket {
 public:
-    // Constructors
+    //life cycle
     Socket();
     explicit Socket(SOCKET fd);
+    static Socket createTcp(); //static constructor
+    ~Socket();
   
-    // Getter
+    //getters
     SOCKET getFd() const;
-
-    // Move-only (no copy)
+    
+    //removed copying
+    Socket(const Socket&) = delete;
+    Socket& operator=(const Socket&) = delete;
+    
+    //instead only move operations
     Socket(Socket&& other) noexcept;
     Socket& operator=(Socket&& other) noexcept;
 
-    // No copying
-    Socket(const Socket&) = delete;
-    Socket& operator=(const Socket&) = delete;
-
-    ~Socket();
-
-    // Static constructors
-    static Socket createTcp();
-
-    // Server-side operations
+    //server-side
     bool bindToPort(int port);
     bool listenOn(int backlog = SOMAXCONN);
     Socket acceptClient();
 
-    // Client-side operations
+    //client-side
     bool connectTo(const std::string& ip, int port);
 
-    // Data operations
+    //data operations
     int sendAll(const char* data, int length);
     int receive(char* buffer, int length);
-
     bool isValid() const;
 
     //helpful functions

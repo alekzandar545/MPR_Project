@@ -23,7 +23,7 @@ int main() {
     }
     std::cout << "Connected!\n";
 
-    // Input parameters
+    //input parameters
     int rows    = getIntFromUser("Enter rows: ");
     int cols    = getIntFromUser("Enter cols: ");
     int threads = getIntFromUser("Enter threads: ");
@@ -34,7 +34,7 @@ int main() {
     }
     std::cout << "Sent test parameters.\n";
 
-    // Receive response
+    //receive response
     std::string message, preview;
     double tSingle, tMulti;
     if (!client.receiveResponse(message, tSingle, tMulti, preview)) {

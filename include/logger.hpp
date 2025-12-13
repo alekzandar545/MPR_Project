@@ -12,15 +12,15 @@ enum class LogLevel { INFO, DEBUG, WARN, ERR };
 
 class Logger {
 public:
-    static Logger& getInstance();  // singleton
+    static Logger& getInstance();  //singleton
 
     void log(const std::string& message, LogLevel level = LogLevel::INFO);
 
-    // optional: change log file at runtime
+    //change log file at runtime -> maybe if used for client
     void setLogFile(const std::string& filename);
 
 private:
-    Logger();  // private for singleton
+    Logger();  //private for singleton
     ~Logger();
     std::ofstream logfile_;
     std::mutex mtx_;

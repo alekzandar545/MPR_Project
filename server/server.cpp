@@ -11,7 +11,7 @@ bool sendResponse(Socket& client, Matrix& m, double timeSingle, double timeMulti
         const std::string msg = "Parameters received OK!";
         const std::string preview = m.previewMatrix();
 
-        // Create an array of send operations as lambdas
+        //creates an array of send operations as lambdas
         const std::function<bool()> sendOps[] = {
             //sending msg for parameters
             [&]() { return client.sendInt(msg.size()); },
@@ -24,7 +24,7 @@ bool sendResponse(Socket& client, Matrix& m, double timeSingle, double timeMulti
             [&]() { return client.sendAll(preview.c_str(), preview.size()); }
         };
 
-        // Execute all sends and check success
+        //execute all sends and check success
         for (const auto& op : sendOps) 
             if (!op()) 
                 throw std::runtime_error("Failed sending data to client");
@@ -81,7 +81,7 @@ void handleClient(Socket client) {
         }
         else{Logger::getInstance().log("Thread count = 1 -> skipping multithreading", LogLevel::INFO);}
 
-        // Send response safely
+        //send response safely
         if (!sendResponse(client, m, timeSingle, timeMulti)) {
             Logger::getInstance().log("Failed to send full response to client", LogLevel::ERR);
             return;
@@ -108,7 +108,7 @@ BOOL WINAPI Server::consoleHandler(DWORD signal) {
         running = false;
 
         if (instance) {
-            closesocket(instance->serverSocket.getFd()); // unblock accept()
+            closesocket(instance->serverSocket.getFd()); //unblock accept()
         }
         return TRUE;
     }
@@ -140,7 +140,7 @@ Server::Server(int port_, int threadCount)
 
 Server::~Server() {
     running = false;
-    pool.shutdown();         // wait for tasks to finish
+    pool.shutdown();         //wait for tasks to finish
     closesocket(serverSocket.getFd());
     WSACleanup();
     Logger::getInstance().log("Server destroyed safely", LogLevel::INFO);
@@ -151,13 +151,13 @@ void setConsoleColor(int color) {
 }
 
 void Server::printStartupBanner(int port, int threadCount) const{
-    setConsoleColor(11); // bright cyan
+    setConsoleColor(11); //cyan
     std::cout << "====================================\n";
-    setConsoleColor(14); // yellow
+    setConsoleColor(14); //yellow
     std::cout << "      MULTI-THREAD MATRIX SERVER     \n";
     setConsoleColor(11);
     std::cout << "====================================\n";
-    setConsoleColor(15); // default white
+    setConsoleColor(15); //white
     std::cout << "Port: " << port << "\n";
     std::cout << "Thread pool size: " << threadCount << "\n";
     std::cout << "Max matrix elements: 100,000,000\n";
